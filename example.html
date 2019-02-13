@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <p>
+    <h1><button id="searchbutton" class="btn-md btn-info glyphicon glyphicon-search" title="toggle search"></button> WikiSearch
+    </h1>
+    </p>
+
+    <div id="search">
+          <button id="random" class="btn-lg btn-info"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Wiki <span class="glyphicon glyphicon-new-window"></span></a></button>    
+          <input id="searchid" class="input-lg" name="gsrsearch" type="text" placeholder="search Wiki" autocomplete="off"/>
+          <button id="searchWiki" class="btn-lg btn-info">Search</button>
+          <button id="clearSearch" class="btn-lg btn-info">Clear</button>
+    <div id="results" class="container-fluid"></div>
+</div>      
+</div>
+</body>
+</html>
