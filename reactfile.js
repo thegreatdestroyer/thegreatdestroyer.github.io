@@ -31,6 +31,7 @@ class App extends React.Component {
     return (
       <div>
             <SearchBox search={this.search}/>
+            <SearchBox2 search={this.search}/>
             <Results searchResults={this.state.searchResults} />
       </div>
     )
@@ -52,6 +53,23 @@ class SearchBox extends React.Component {
           <option value="software">Apps</option>
           <option value="movie">Films</option>
         </select>
+        <input type="submit" onClick={this.createAjax.bind(this)} />
+      </div>
+    )
+  }
+}
+
+class SearchBox2 extends React.Component {
+  createAjax(){
+      var query = ReactDOM.findDOMNode(this.refs.query).value;
+      var category = ReactDOM.findDOMNode(this.refs.category).value;
+      var URL = 'https://ru.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=1&generator=search&origin=*&gsrsearch=' + query + category;
+      this.props.search(URL)
+    }
+  render() {    
+    return (
+      <div>
+        <input type="text" ref="query"/>
         <input type="submit" onClick={this.createAjax.bind(this)} />
       </div>
     )
