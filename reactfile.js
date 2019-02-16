@@ -70,7 +70,6 @@ class SearchBox2 extends React.Component {
     return (
       <div>
         <input type="text" ref="query"/>
-        <input type="submit" onClick={this.createAjax.bind(this)} />
       </div>
     )
   }
