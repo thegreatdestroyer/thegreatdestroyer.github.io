@@ -1,3 +1,16 @@
+const {
+  Button,
+  ButtonDropdown,
+  ButtonGroup,
+  ButtonToolbar,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  TetherContent,
+  Tooltip
+} = Reactstrap;
+
 class App extends React.Component {
   constructor() {
     super();
@@ -53,7 +66,8 @@ class SearchBox extends React.Component {
           <option value="movie">Films</option>
         </select>
         <input type="text"/>
-        <input type="submit" onClick={this.createAjax.bind(this)} />
+        
+        <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
       </div>
     )
   }
