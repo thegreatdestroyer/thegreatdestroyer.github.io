@@ -52,8 +52,8 @@ class SearchBox extends React.Component {
           <option value="software">Apps</option>
           <option value="movie">Films</option>
         </select>
-        <input type="submit" onClick={this.createAjax.bind(this)} />
         <input type="text"/>
+        <input type="submit" onClick={this.createAjax.bind(this)} />
       </div>
     )
   }
@@ -67,7 +67,7 @@ class Results extends React.Component {
   )
     return (
       <div>
-        <ul>
+        <ul style={{ color: "red"}}>
           {resultItems}
         </ul>
       </div>
