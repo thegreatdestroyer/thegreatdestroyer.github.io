@@ -42,9 +42,9 @@ class App extends React.Component {
   
   render() {
     return (
-      <div class="container d-flex h-100">
-        <div class="row align-self-center w-100">
-          <div class="col-6 mx-auto">
+      <div className="container d-flex h-100">
+        <div className="row align-self-center w-100">
+          <div className="col-6 mx-auto">
             <SearchBox search={this.search}/>
             <Results searchResults={this.state.searchResults} />
           </div>
@@ -66,6 +66,10 @@ class SearchBox extends React.Component {
     return (
       <div>
         <input type="text" ref="query"/>
+        {/* <select ref="category">
+          <option value="software">Apps</option>
+          <option value="movie">Films</option>
+        </select>*/}
         <input type="text" ref="category"/>
         
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
