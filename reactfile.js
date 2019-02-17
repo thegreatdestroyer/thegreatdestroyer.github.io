@@ -66,10 +66,6 @@ class SearchBox extends React.Component {
     return (
       <div>
         <input type="text" ref="query"/>
-        {/* <select ref="category">
-          <option value="software">Apps</option>
-          <option value="movie">Films</option>
-        </select>*/}
         <input type="text" ref="category"/>
         
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
