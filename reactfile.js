@@ -47,8 +47,8 @@ class App extends React.Component {
           <div class="col-6 mx-auto">
             <SearchBox search={this.search}/>
             <Results searchResults={this.state.searchResults} />
-      </div>
-      </div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -66,11 +66,11 @@ class SearchBox extends React.Component {
     return (
       <div>
         <input type="text" ref="query"/>
-        <select ref="category">
+        {/* <select ref="category">
           <option value="software">Apps</option>
           <option value="movie">Films</option>
-        </select>
-        <input type="text"/>
+        </select>*/}
+        <input type="text" ref="category"/>
         
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
           </div>
