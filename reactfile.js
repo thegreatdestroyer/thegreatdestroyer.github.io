@@ -42,9 +42,13 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div class="container d-flex h-100">
+        <div class="row align-self-center w-100">
+          <div class="col-6 mx-auto">
             <SearchBox search={this.search}/>
             <Results searchResults={this.state.searchResults} />
+      </div>
+      </div>
       </div>
     )
   }
@@ -60,9 +64,7 @@ class SearchBox extends React.Component {
 
   render() {    
     return (
-      <div class="container d-flex h-100">
-        <div class="row align-self-center w-100">
-          <div class="col-6 mx-auto">
+      <div>
         <input type="text" ref="query"/>
         <select ref="category">
           <option value="software">Apps</option>
@@ -72,8 +74,6 @@ class SearchBox extends React.Component {
         
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
           </div>
-        </div>
-      </div>
     )
   }
 }
