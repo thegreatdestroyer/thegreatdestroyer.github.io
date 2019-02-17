@@ -57,9 +57,12 @@ class SearchBox extends React.Component {
       var URL = 'https://itunes.apple.com/search?term=' + query + '&country=us&entity=' + category;
       this.props.search(URL)
     }
+
   render() {    
     return (
-      <div>
+      <div class="container d-flex h-100">
+        <div class="row align-self-center w-100">
+          <div class="col-6 mx-auto">
         <input type="text" ref="query"/>
         <select ref="category">
           <option value="software">Apps</option>
@@ -68,6 +71,8 @@ class SearchBox extends React.Component {
         <input type="text"/>
         
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
+          </div>
+        </div>
       </div>
     )
   }
