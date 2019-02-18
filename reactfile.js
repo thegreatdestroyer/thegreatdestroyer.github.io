@@ -57,8 +57,7 @@ class App extends React.Component {
 class SearchBox extends React.Component {
   createAjax(){
       var query = ReactDOM.findDOMNode(this.refs.query).value;
-      var category = ReactDOM.findDOMNode(this.refs.category).value;
-      var URL = 'https://itunes.apple.com/search?term=' + query + '&country=us&entity=' + category;
+      var URL = 'https://itunes.apple.com/search?term=' + query + '&country=us&entity=software';
       this.props.search(URL)
     }
 
@@ -66,11 +65,6 @@ class SearchBox extends React.Component {
     return (
       <div>
         <input type="text" ref="query"/>
-        {/* <select ref="category">
-          <option value="software">Apps</option>
-          <option value="movie">Films</option>
-        </select>*/}
-        <input type="text" ref="category"/>
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
           </div>
     )
