@@ -71,7 +71,6 @@ class SearchBox extends React.Component {
           <option value="movie">Films</option>
         </select>*/}
         <input type="text" ref="category"/>
-        
         <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
           </div>
     )
@@ -97,7 +96,7 @@ class Results extends React.Component {
 class ResultItem extends React.Component {
   render() {
     return (
-      <li>{this.props.trackName}</li>
+      <div className="card card-1">{this.props.trackName}</div>
     )
   }
 }
