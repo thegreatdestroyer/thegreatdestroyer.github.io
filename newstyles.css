@@ -3,6 +3,10 @@ body {
   text-align: center;
 }
 
+.margin-top {
+  margin-top: 10%;
+}
+
 .card {
   background: #fff;
   border-radius: 2px;

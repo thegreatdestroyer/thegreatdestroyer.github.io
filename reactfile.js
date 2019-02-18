@@ -42,7 +42,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className="container d-flex h-100">
+      <div className="container justify-content-center margin-top">
         <div className="row align-self-center w-100">
           <div className="col-6 mx-auto">
             <SearchBox search={this.search}/>
@@ -96,7 +96,7 @@ class Results extends React.Component {
 class ResultItem extends React.Component {
   render() {
     return (
-      <div className="card card-1">{this.props.trackName}</div>
+      <div className="container justify-content-center card card-1">{this.props.trackName}</div>
     )
   }
 }
