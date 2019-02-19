@@ -24,21 +24,35 @@ class App extends React.Component {
   
   showResults(response) {
     this.setState({
-      searchResults: response.results
+      searchResults: response
     })
     console.log(response)
   }
   
-  search(URL) {
-    $.ajax({
-      type: "GET",
-      dataType: 'jsonp',
-      url: URL,
-      success: function(response) {
-        this.showResults(response);
-      }.bind(this)
-    });
+  async getResp(URL) {
+		
+    const response = await fetch(URL);
+    const data = await response.json();
+    
+    const [term, shortNames, longNames, urls] = data;
+    
+    const result = shortNames.map( ( shortName , index ) => ({
+      short_name:shortName,
+      long_name: longNames[index],
+      url: urls[index]
+    }));
+    
+    console.log(result);
+    
+    return result;
+    
   }
+  
+  search(URL) {
+  	this.getResp(URL).then(response => this.showResults(response));
+  }
+  
+  
   
   render() {
     return (
@@ -57,7 +71,7 @@ class App extends React.Component {
 class SearchBox extends React.Component {
   createAjax(){
       var query = ReactDOM.findDOMNode(this.refs.query).value;
-      var URL = 'https://itunes.apple.com/search?term=' + query + '&country=us&entity=software';
+      var URL = 'https://ru.wikipedia.org/w/api.php?action=opensearch&limit=1&origin=*&search=' + query;
       this.props.search(URL)
     }
 
@@ -75,7 +89,7 @@ class SearchBox extends React.Component {
 class Results extends React.Component {                                                
   render() {
     var resultItems = this.props.searchResults.map((result) =>
-      <ResultItem key={result.trackId} trackName={result.trackName} /> 
+      <ResultItem shortName={result.short_name} longNames={result.long_name} urls={result.url} /> 
   )
     return (
       <div>
@@ -90,7 +104,9 @@ class Results extends React.Component {
 class ResultItem extends React.Component {
   render() {
     return (
-      <div className="container justify-content-center card card-1">{this.props.trackName}</div>
+      <div className="container justify-content-center card card-1">
+      <a href={this.props.urls}>{this.props.shortName}</a>
+      <div>{this.props.longNames}</div></div>
     )
   }
 }

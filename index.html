@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="axiosfile.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Поиск вики</title>
-</head>
-<body>
-<div id="search">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <link href="newstyles.css" rel="stylesheet">
+    <link href="https://npmcdn.com/bootstrap@4.0.0-alpha.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://npmcdn.com/react@15/dist/react-with-addons.min.js"></script>
+    <script src="https://npmcdn.com/reactstrap@2/dist/reactstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel" src="reactfile.js">
 
-  <input id="searchWiki" type="button" value="ПОИСК">
-  <input id="searchid" name="gsrsearch" type="text" placeholder="Найти в википедии" autocomplete="off"/>
-  <div id="results"></div>
+      ReactDOM.render(
+        document.getElementById('app')
+      );
 
-  </div>
-</body>
+    </script>
+  </body>
 </html>
