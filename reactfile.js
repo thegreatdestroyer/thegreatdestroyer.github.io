@@ -1,16 +1,3 @@
-const {
-  Button,
-  ButtonDropdown,
-  ButtonGroup,
-  ButtonToolbar,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  TetherContent,
-  Tooltip
-} = Reactstrap;
-
 class App extends React.Component {
   constructor() {
     super();
@@ -71,7 +58,7 @@ class App extends React.Component {
 class SearchBox extends React.Component {
   createAjax(){
       var query = ReactDOM.findDOMNode(this.refs.query).value;
-      var URL = 'https://ru.wikipedia.org/w/api.php?action=opensearch&limit=1&origin=*&search=' + query;
+      var URL = 'https://ru.wikipedia.org/w/api.php?action=opensearch&limit=5&origin=*&search=' + query;
       this.props.search(URL)
     }
 
@@ -79,7 +66,7 @@ class SearchBox extends React.Component {
     return (
       <div>
         <input type="text" ref="query"/>
-        <Button onClick={this.createAjax.bind(this)}>Отправить</Button>
+        <input type="button" value="Отправить" onClick={this.createAjax.bind(this)}/>
           </div>
     )
   }
@@ -93,7 +80,7 @@ class Results extends React.Component {
   )
     return (
       <div>
-        <ul style={{ color: "red"}}>
+        <ul>
           {resultItems}
         </ul>
       </div>
